@@ -1,7 +1,11 @@
+import Set_1
 
-my_string :: String
-my_string = "Hello World!"
+import qualified Data.ByteString as BS
+import qualified Data.ByteString.Char8 as BC
+import qualified Data.ByteString.Base64 as B64
 
 main :: IO ()
 main = do
-	print $ my_string
+	putStrLn "Matasano Challenges"
+	putStrLn "Set 1"
+	print $ BS.pack "hello"

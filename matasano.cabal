@@ -16,10 +16,14 @@ version:             0.1.0.0
 synopsis:            Matasano crypto challenges
 
 -- A longer description of the package.
--- description:         
+description:         Shouldn't be too interesting but I'm going to try to redo
+                      my work on the matasano challenges with real meaningful
+                      types and development 
 
 -- URL for the project homepage or repository.
 homepage:            https://github.com/Marcus-Rosti/matasano
+
+
 
 -- The license under which the package is released.
 license:             GPL-3
@@ -28,7 +32,7 @@ license:             GPL-3
 license-file:        LICENSE
 
 -- The package author(s).
-author:              Marcus Rosti
+author:              Marcugs Rosti
 
 -- An email address to which users can send suggestions, bug reports, and 
 -- patches.
@@ -37,7 +41,7 @@ maintainer:          mer3ef@virginia.edu
 -- A copyright notice.
 -- copyright:           
 
--- category:            
+category:           Cryptography
 
 build-type:          Simple
 
@@ -46,7 +50,24 @@ build-type:          Simple
 extra-source-files:  README.md
 
 -- Constraint on the version of Cabal needed to build this package.
-cabal-version:       >=1.10
+cabal-version:       >=1.22
+
+
+source-repository head
+  type:               git
+  location:           https://github.com/Marcus-Rosti/matasano
+  branch:             main
+
+library
+  exposed:          True
+  build-depends:    base >=4.6 && <4.8
+  default-language: Haskell2010
+  hs-source-dirs:   src/set_1
+  exposed-modules:  Set_1
+  build-depends:    base >=4.6
+                    , bytestring
+  ghc-options:      
+    -Wall
 
 
 executable matasano
@@ -54,16 +75,17 @@ executable matasano
   main-is:             Main.hs
   
   -- Modules included in this executable, other than Main.
-  -- other-modules:       
+  other-modules:       Set_1
   
   -- LANGUAGE extensions used by modules in this package.
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.6 && <4.7
+  build-depends:       base >=4.6 && <4.8
+                      , bytestring
   
   -- Directories containing source files.
-  hs-source-dirs:      src
+  hs-source-dirs:      src, src/set_1
   
   -- Base language which the package is written in.
   default-language:    Haskell2010
