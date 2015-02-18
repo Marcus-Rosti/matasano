@@ -1,8 +1,8 @@
-import Set_1
+import           Set_1
 
-import qualified Data.ByteString as BS
-import qualified Data.ByteString.Char8 as BC
+import qualified Data.ByteString        as BS
 import qualified Data.ByteString.Base64 as B64
+import qualified Data.ByteString.Char8  as BC
 
 main :: IO ()
 main = do
